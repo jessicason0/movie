@@ -1,0 +1,31 @@
+.hero {
+  position: relative;
+  min-height: 30rem;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.hero__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: #dddddd;
+  max-width: 30rem;
+}
+
+.hero img {
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  text-shadow: 1px 1px #00000083;
+}
+
+.hero p {
+  text-shadow: 1px 1px #00000083;
+}

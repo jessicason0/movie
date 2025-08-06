@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  align-items: center;
+  background-color: #222222;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+}
+
+.nav__content {
+  display: flex;
+  gap: 2rem;
+}
+
+nav img {
+  width: 5rem;
+  height: 3rem;
+  background-color: #fff;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 1px 1px 4px #00000083;
+}
+
+nav a:hover {
+  color: #d6a5ad;
+}
+
+nav button {
+  color: #dddddd;
+}

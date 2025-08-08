@@ -5,8 +5,9 @@
   font-family: Arial;
 }
 
-body {
-  background-color: #1b1b1c;
+:root {
+  --clr-bg: #131313;
+  background-color: var(--clr-bg);
 }
 
 .wrapper {

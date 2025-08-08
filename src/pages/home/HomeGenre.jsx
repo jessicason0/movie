@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { generateName } from "../helper/generateName";
+import { generateName } from "../../helper/generateName";
 import "./homeGenre.css";
 import { useNavigate } from "react-router";
 

@@ -20,17 +20,6 @@ export async function getLandingMovie() {
   return data.results[1];
 }
 
-export async function getMoviesById(id) {
-  const endpoint = "/discover/movie";
-  const query =
-    "?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc";
-  const url = `${BASE_URL + endpoint + query}/${id}`;
-
-  const res = await fetch(url, options);
-  const data = await res.json();
-  return data.results;
-}
-
 export async function getMoviesByGenreId(id) {
   const endpoint = "/discover/movie";
   const query =
@@ -41,6 +30,16 @@ export async function getMoviesByGenreId(id) {
   const res = await fetch(url, options);
   const data = await res.json();
   return data.results;
+}
+
+export async function getMovieDetail(id) {
+  const endpoint = "/movie";
+  const query = "?language=en-US";
+  const url = `${BASE_URL + endpoint}/${id}${query}`;
+
+  const res = await fetch(url, options);
+  const data = await res.json();
+  return data;
 }
 
 export async function getMovies() {

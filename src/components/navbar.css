@@ -3,16 +3,11 @@ nav {
   justify-content: space-between;
   padding: 0.5rem 2rem;
   align-items: center;
-  background-color: #222222;
-  background-color: transparent;
-  position: absolute;
-  left: 0;
-  top: 0;
   z-index: 9;
   width: 100%;
   position: fixed;
   height: 4rem;
-  background-color: #222222;
+  background-color: var(--clr-bg);
 }
 
 .nav__content {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeGenre from "./HomeGenre";
-import { getMovies } from "../api/movieApi";
+import { getMovies } from "../../api/movieApi";
 
 function HomeContent() {
   const [movieData, setMovieData] = useState(null);

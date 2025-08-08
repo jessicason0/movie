@@ -10,6 +10,9 @@ nav {
   top: 0;
   z-index: 9;
   width: 100%;
+  position: fixed;
+  height: 4rem;
+  background-color: #222222;
 }
 
 .nav__content {

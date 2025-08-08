@@ -11,9 +11,8 @@ function HomeContent() {
   return (
     <div
       style={{
-        "margin-top": "2rem",
         display: "flex",
-        "flex-direction": "column",
+        flexDirection: "column",
         gap: "2rem",
       }}
     >

@@ -1,6 +1,5 @@
 import React from "react";
 import LandingHero from "./LandingHero";
-import HomeGenre from "./HomeGenre";
 import HomeContent from "./HomeContent";
 
 function Home() {

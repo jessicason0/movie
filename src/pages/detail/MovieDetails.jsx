@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./movieDetails.css";
-import { getMovieDetail } from "../../api/movieApi";
+import { getMovieDetailById } from "../../api/movieApi";
 import { useParams } from "react-router";
+import Reviews from "./Reviews";
+import SimilarMovies from "./SimilarMovies";
 
 const imgUrl = "https://image.tmdb.org/t/p/w500";
 
 function MovieDetails() {
-  const [movieDetail, setMovieDetail] = useState(null);
+  const [movieDetail, setMovieDetail] = useState(null); // can this be set as true?
+  const year = movieDetail?.release_date.slice(0, 4);
   const { id } = useParams();
 
   useEffect(() => {
-    getMovieDetail(id).then((data) => setMovieDetail(data));
+    getMovieDetailById(id).then((data) => setMovieDetail(data));
   }, []);
 
   console.log(movieDetail);
@@ -19,34 +22,35 @@ function MovieDetails() {
     <div className="detail">
       <div className="wrapper">
         <div className="detail__content">
-          <div>
+          <div className="detail__top">
             <div className="img-container">
-              <img src="img" alt="img" />
+              <img
+                src={imgUrl + movieDetail?.backdrop_path}
+                alt={movieDetail?.title}
+              />
             </div>
             <div className="detail__desc">
-              <h2>{movieDetail?.title}</h2>
-              <div>release date</div>
-              <div>genres</div>
-              <p>description overview</p>
+              <h2>Description</h2>
+              <div className="detail__desc-detail">
+                <div className="detail__desc-title">
+                  <h3>{movieDetail?.title}</h3>
+                  <div>{year}</div>
+                </div>
+                <div className="detail__desc-genre">
+                  <span>Genre: </span>{" "}
+                  {movieDetail?.genres.map((item) => (
+                    <div key={item.id}>{item.name}</div>
+                  ))}
+                </div>
+                <p>{movieDetail?.overview}</p>
+              </div>
             </div>
           </div>
           <div className="detail__reviews">
-            <div>username</div>
-            <div>review description content</div>
-            <div>svg + rating</div>
+            <Reviews />
           </div>
-          <div className="detail__recommended">
-            <div className="img-container">
-              <img src="img" alt="img" />
-            </div>
-            <div className="detail__recommended-desc">
-              <div>
-                <h3>title</h3>
-                <div>svg + rating</div>
-                <div>description overview</div>
-              </div>
-              <button>Movie Details</button>
-            </div>
+          <div className="detail__similar">
+            <SimilarMovies />
           </div>
         </div>
       </div>

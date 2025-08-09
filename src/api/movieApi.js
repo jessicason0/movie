@@ -32,7 +32,7 @@ export async function getMoviesByGenreId(id) {
   return data.results;
 }
 
-export async function getMovieDetail(id) {
+export async function getMovieDetailById(id) {
   const endpoint = "/movie";
   const query = "?language=en-US";
   const url = `${BASE_URL + endpoint}/${id}${query}`;
@@ -40,6 +40,26 @@ export async function getMovieDetail(id) {
   const res = await fetch(url, options);
   const data = await res.json();
   return data;
+}
+
+export async function getMovieReviewById(id) {
+  const endpoint = "/movie";
+  const query = "reviews?language=en-US&page=1";
+  const url = `${BASE_URL + endpoint}/${id}/${query}`;
+
+  const res = await fetch(url, options);
+  const data = await res.json();
+  return data.results;
+}
+
+export async function getSimilarMoviesById(id) {
+  const endpoint = "/movie";
+  const query = "similar?language=en-US&page=1";
+  const url = `${BASE_URL + endpoint}/${id}/${query}`;
+
+  const res = await fetch(url, options);
+  const data = await res.json();
+  return data.results;
 }
 
 export async function getMovies() {

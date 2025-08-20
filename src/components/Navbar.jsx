@@ -16,11 +16,11 @@ function Navbar() {
           <ul>
             <Link to={"/"}>Home</Link>
             <Link to={"movies"}>Movies</Link>
-            <Link to={"popular"}>Popular</Link>
-            <Link to={"genre"}>Genre</Link>
+            <Link to={"trending"}>Trending</Link>
+            <Link to={"upcoming"}>Upcoming</Link>
           </ul>
           <input type="text" placeholder="search movies" />
-          <div>
+          <div className="nav__login">
             <button>Login</button>
             <button>Sign Up</button>
           </div>

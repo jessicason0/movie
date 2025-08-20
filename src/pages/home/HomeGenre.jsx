@@ -1,12 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Navigation } from "swiper/modules";
+import { A11y, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { generateName } from "../../helper/generateName";
 import "./homeGenre.css";
 import { useNavigate } from "react-router";
 
-const imgUrl = "https://image.tmdb.org/t/p/w500";
+const imgUrl = "https://image.tmdb.org/t/p/w780";
 
 function HomeGenre({ genre, movies }) {
   const navigate = useNavigate();
@@ -21,7 +22,6 @@ function HomeGenre({ genre, movies }) {
         <div className="home-genre__content">
           <div className="home-genre__genre">
             <h3>{generateName(genre)}</h3>
-            <div>horizontal scroll</div>
           </div>
           <div className="home-genre__movies">
             <button
@@ -41,11 +41,13 @@ function HomeGenre({ genre, movies }) {
               </svg>
             </button>
             <Swiper
-              modules={[Navigation, A11y]}
+              modules={[Navigation, A11y, Pagination]}
               spaceBetween={10}
               slidesPerView={5}
               slidesPerGroup={5}
               speed={700}
+              pagination={{ clickable: true }}
+              loop
               navigation={{
                 prevEl: `.arrow--prev-${genre}`,
                 nextEl: `.arrow--next-${genre}`,
@@ -53,6 +55,8 @@ function HomeGenre({ genre, movies }) {
               onInit={(swiper) => {
                 swiper.navigation.init();
                 swiper.navigation.update();
+                swiper.pagination.init();
+                swiper.pagination.update();
               }}
             >
               {movies.map((item) => {
@@ -89,7 +93,18 @@ function HomeGenre({ genre, movies }) {
                           </button>
                         </div>
                       }
-                      <img src={imgUrl + item.poster_path} alt={item.title} />
+
+                      {item.backdrop_path ? (
+                        <img
+                          src={imgUrl + item.backdrop_path}
+                          alt={item.title}
+                        />
+                      ) : (
+                        <img
+                          src="https://www.clipartmax.com/png/middle/1-10021_clipart-movies-hd-movies-logo-transparent.png"
+                          alt={item.title}
+                        />
+                      )}
                     </div>
                   </SwiperSlide>
                 );

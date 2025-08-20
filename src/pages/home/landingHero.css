@@ -14,7 +14,7 @@
   bottom: 10%;
   left: 5%;
   color: #dddddd;
-  max-width: 30rem;
+  max-width: 36rem;
 }
 
 .hero img {
@@ -38,10 +38,11 @@
 }
 
 .hero h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-shadow: 1px 1px #00000083;
 }
 
 .hero p {
   text-shadow: 1px 1px #00000083;
+  font-size: 1.1em;
 }

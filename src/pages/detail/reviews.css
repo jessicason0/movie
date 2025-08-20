@@ -8,21 +8,21 @@
   border-bottom: 2px solid #fff;
 }
 
-.reviews__none {
+.reviews__submit {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.reviews__none p {
+.reviews__submit p {
   font-size: 1.1em;
 }
 
-.reviews__none input {
+.reviews__submit input {
   max-width: 14rem;
 }
 
-.reviews__none button {
+.reviews__submit button {
   background-color: #a9a9a9;
   width: 5rem;
   padding: 0.3rem 1rem;
@@ -31,17 +31,23 @@
   border-radius: 6px;
 }
 
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .reviews__content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .reviews__content-card {
-  max-width: 30rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  max-width: 80em;
 }
 
 .reviews__name {
@@ -66,7 +72,7 @@
 
 .reviews-btn {
   background-color: #a9a9a9;
-  width: 7rem;
+  width: 6rem;
   padding: 0.3rem 0rem;
   font-weight: bold;
   color: var(--clr-bg);

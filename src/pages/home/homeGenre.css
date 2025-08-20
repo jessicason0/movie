@@ -1,3 +1,23 @@
+.swiper-slide {
+  width: 10px;
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper-pagination {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+}
+.swiper-pagination-bullet {
+  background-color: white;
+}
+
 .home-genre {
 }
 
@@ -26,7 +46,7 @@
 
 .home-genre__movies .img-container {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9;
   position: relative;
 }
 
@@ -35,23 +55,25 @@
 }
 
 .home-genre__movies .img-container:hover img {
-  filter: brightness(45%);
+  filter: brightness(40%);
 }
 
 .home-genre__movies img {
   transition: transform 0.3s ease-in-out;
   transition-delay: 0s;
   object-fit: cover;
+  position: absolute;
 }
 
 .home-genre__details {
   display: flex;
   flex-direction: column;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   z-index: 999;
   height: 100%;
   width: 100%;
-  padding: 0 1rem;
   opacity: 0;
 }
 
@@ -61,13 +83,12 @@
   height: 100%;
   justify-content: center;
   text-align: center;
-  color: #fff;
-  gap: 1rem;
+  color: #dfdfdf;
+  gap: 0.2rem;
   text-shadow: 1px 1px 1px #000000b0;
 }
 
 .home-genre__details-box p {
-  font-size: 1.2em;
 }
 
 .home-genre__rating {
@@ -75,6 +96,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  font-size: 0.9em;
 }
 
 .home-genre__rating svg {
@@ -88,14 +110,11 @@
 }
 
 .home-genre__details-btn {
-  margin-top: auto;
-  margin: auto;
-  margin-bottom: 2rem;
-  width: 8rem;
-  background-color: #f13a3a;
-  color: #f2f2f2;
+  margin-bottom: 1rem;
+  background-color: #31317c;
+  color: #dfdfdf;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 1rem;
 }
 

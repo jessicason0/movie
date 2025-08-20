@@ -4,6 +4,7 @@ import { getMovies } from "../../api/movieApi";
 
 function HomeContent() {
   const [movieData, setMovieData] = useState(null);
+
   useEffect(() => {
     getMovies().then((data) => setMovieData(data));
   }, []);
@@ -13,7 +14,7 @@ function HomeContent() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "2rem",
+        gap: "1rem",
       }}
     >
       {movieData?.map((item) => {
